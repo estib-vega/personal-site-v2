@@ -14,11 +14,12 @@ const config: Config = {
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
       fontFamily: {
-        header: "var(--header-font)",
+        header: ["var(--header-font)"],
         body: "var(--body-font)",
       },
       fontSize: {
         "10xl": ["10rem", "1"],
+        "12xl": ["12rem", "1"],
       },
       animation: {
         "fade-in": "fade-in 300ms ease-in-out",

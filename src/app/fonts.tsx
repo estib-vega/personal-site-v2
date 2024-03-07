@@ -4,7 +4,7 @@ export const headerFont = Playfair_Display({
   subsets: ["latin"],
   weight: "800",
   variable: "--header-font",
-  style: "italic",
+  style: ["italic", "normal"],
 });
 
 export const bodyFont = Jost({
