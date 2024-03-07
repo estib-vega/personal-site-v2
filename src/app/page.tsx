@@ -1,9 +1,11 @@
+import MainNavigation from "@/components/MainNavigation";
+
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <h1>
-        Hello there
-      </h1>
+    <main className="flex min-h-screen justify-between">
+      <div className=" gradient fixed top-0 left-0 w-screen h-screen box-border">
+        <MainNavigation />
+      </div>
     </main>
   );
 }

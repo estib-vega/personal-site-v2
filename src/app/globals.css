@@ -8,14 +8,20 @@
   --background-end-rgb: #0088ff;
 }
 
-
 body {
+  position: fixed;
   color: var(--foreground-rgb);
-  background: linear-gradient(to bottom, transparent, var(--background-end-rgb))
-    var(--background-start-rgb);
 }
 
 @layer utilities {
+  .gradient {
+    background: linear-gradient(
+        to bottom,
+        transparent,
+        var(--background-end-rgb)
+      )
+      var(--background-start-rgb);
+  }
   .text-balance {
     text-wrap: balance;
   }
