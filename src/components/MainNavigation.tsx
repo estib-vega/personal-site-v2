@@ -14,7 +14,7 @@ const MainNavigation = (): JSX.Element => {
           </h1>
         ))}
       </div>
-      <h1 className="text-6xl font-header italic md:text-10xl animate-fade-in">
+      <h1 className="text-6xl font-header italic md:text-8xl animate-fade-in">
         estib
       </h1>
     </nav>
