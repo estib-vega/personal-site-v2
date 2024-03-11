@@ -3,6 +3,7 @@ import React from "react";
 import Markdown from "react-markdown";
 import Blockquote from "./md/Blockquote";
 import Header from "./md/Header";
+import { ImageInfo } from "@/lib/image";
 
 export enum MDContentTypes {
   String = "string",
@@ -11,6 +12,7 @@ export enum MDContentTypes {
 
 interface BaseMDContentProps {
   type: MDContentTypes;
+  headerImage?: ImageInfo;
 }
 
 interface MDContentPropsFromString extends BaseMDContentProps {
@@ -50,7 +52,7 @@ const MDContent: React.FC<MDContentProps> = (props) => {
   return (
     <Markdown
       components={{
-        h1: ({ children }) => <Header>{children}</Header>,
+        h1: ({ children }) => <Header headerImage={props.headerImage}>{children}</Header>,
         p: ({ children }) => (
           <p className="font-normal text-md lg:text-lg mb-4">{children}</p>
         ),

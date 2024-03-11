@@ -1,3 +1,5 @@
+
+
 const MainNavigation = (): JSX.Element => {
   const routes = [
     { name: "Home", path: "/" },
@@ -6,10 +8,10 @@ const MainNavigation = (): JSX.Element => {
     { name: "Contact", path: "/contact" },
   ];
   return (
-    <nav className="p-2 box-border h-screen min-w-1/2 md:min-w-1/4 flex flex-col justify-end items-center top-0 left-0">
-      <div className="pt-4 h-full w-full flex-col justify-center items-center">
+    <nav className="p-2 box-border sm:h-screen min-w-1/2 md:min-w-1/4 flex flex-col justify-end items-center">
+      <div className="pt-2 sm:pt-4 h-full w-full flex sm:flex-col justify-center items-center">
         {routes.map((route) => (
-          <h1 className="text-xl font-body tracking-wide text-center animate-fade-in" key={route.path}>
+          <h1 className="mr-2 text-md sm:text-xl font-body tracking-wide text-center animate-fade-in" key={route.path}>
             {route.name}
           </h1>
         ))}
