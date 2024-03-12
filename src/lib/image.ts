@@ -1,5 +1,8 @@
 export enum ImageName {
   Cat = "cat",
+  Choque = "choque",
+  Craneo = "craneo",
+  Lagartija = "lagartija",
 }
 
 export interface ImageInfo {
@@ -13,6 +16,21 @@ const images: Record<ImageName, ImageInfo> = {
     name: ImageName.Cat,
     url: "/img/cat.jpg",
     alt: "Cat",
+  },
+  [ImageName.Choque]: {
+    name: ImageName.Choque,
+    url: "/img/choque.jpg",
+    alt: "Choque",
+  },
+  [ImageName.Craneo]: {
+    name: ImageName.Craneo,
+    url: "/img/craneo.jpeg",
+    alt: "Craneo",
+  },
+  [ImageName.Lagartija]: {
+    name: ImageName.Lagartija,
+    url: "/img/lagartija.jpeg",
+    alt: "Lagartija",
   },
 };
 
