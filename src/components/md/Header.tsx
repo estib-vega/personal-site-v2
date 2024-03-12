@@ -1,13 +1,13 @@
-import Image from "next/image";
 import React from "react";
 import UserBadge from "../generic/UserBadge";
-import { ImageInfo } from "@/lib/image";
+import { ImageName } from "@/lib/image";
+import Img from "../generic/Img";
 
 const MAIN_USERNAME = "estib";
 const MAIN_AVATAR_URL = "/img/estib-profile.jpeg";
 
 interface HeaderImageProps {
-  image: ImageInfo | undefined;
+  image: ImageName | undefined;
 }
 
 const HeaderImage: React.FC<HeaderImageProps> = (props) => {
@@ -17,21 +17,17 @@ const HeaderImage: React.FC<HeaderImageProps> = (props) => {
 
   return (
     <div className="w-full h-96">
-      <div className="relative w-full h-full mr-4 rounded-lg overflow-hidden">
-        <Image
-          src={props.image.url}
-          alt={props.image.alt}
-          fill
-          className="object-cover"
-        />
-      </div>
+      <Img
+        className="relative w-full h-full mr-4 rounded-lg overflow-hidden"
+        name={props.image}
+      />
     </div>
   );
 };
 
 interface HeaderProps {
   children: React.ReactNode;
-  headerImage?: ImageInfo;
+  headerImage?: ImageName;
 }
 
 const Header: React.FC<HeaderProps> = (props) => {
@@ -45,7 +41,7 @@ const Header: React.FC<HeaderProps> = (props) => {
           </h1>
         </div>
       </div>
-        <UserBadge username={MAIN_USERNAME} avatarUrl={MAIN_AVATAR_URL} />
+      <UserBadge username={MAIN_USERNAME} avatarUrl={MAIN_AVATAR_URL} />
     </div>
   );
 };

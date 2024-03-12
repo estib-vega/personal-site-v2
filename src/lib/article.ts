@@ -1,20 +1,19 @@
-import { ImageInfo, ImageName, getImageInfoByName } from "./image";
+import { ImageName } from "./image";
 
 export enum ArticleName {
   Portfolio = "portfolio",
 }
 
-
 export interface ArticleInfo {
   name: ArticleName;
-  image: ImageInfo;
+  image: ImageName;
   fileName: string;
 }
 
 const articles: Record<ArticleName, ArticleInfo> = {
   [ArticleName.Portfolio]: {
     name: ArticleName.Portfolio,
-    image: getImageInfoByName(ImageName.Cat),
+    image: ImageName.Cat,
     fileName: "intro.md",
   },
 };

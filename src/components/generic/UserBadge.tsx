@@ -1,5 +1,5 @@
 import React from "react";
-import Image from "next/image";
+import Img from "./Img";
 
 type UserBadgeProps = {
   username: string;
@@ -17,15 +17,12 @@ type UserBadgeProps = {
 const UserBadge: React.FC<UserBadgeProps> = ({ username, avatarUrl }) => {
   return (
     <div className="flex items-center">
-      <div className="w-14 h-14 overflow-hidden rounded-full m-2 shadow-sm shadow-gray-400 relative">
-        <Image
-          src={avatarUrl}
-          alt={username}
-          quality={50}
-          fill
-
-        />
-      </div>
+      <Img
+        className="w-14 h-14 overflow-hidden rounded-full m-2 shadow-sm shadow-gray-400 relative"
+        src={avatarUrl}
+        alt={username}
+        quality={20}
+      />
       <p className="font-normal text-gray-600 text-sm lg:text-md">{username}</p>
     </div>
   );

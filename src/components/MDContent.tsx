@@ -3,7 +3,7 @@ import React from "react";
 import Markdown from "react-markdown";
 import Blockquote from "./md/Blockquote";
 import Header from "./md/Header";
-import { ImageInfo } from "@/lib/image";
+import { ImageName } from "@/lib/image";
 
 export enum MDContentTypes {
   String = "string",
@@ -12,7 +12,7 @@ export enum MDContentTypes {
 
 interface BaseMDContentProps {
   type: MDContentTypes;
-  headerImage?: ImageInfo;
+  headerImage?: ImageName;
 }
 
 interface MDContentPropsFromString extends BaseMDContentProps {
