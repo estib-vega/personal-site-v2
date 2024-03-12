@@ -16,14 +16,15 @@ const HeaderImage: React.FC<HeaderImageProps> = (props) => {
   }
 
   return (
-    <div className="relative w-full h-96 mb-4 mr-4 rounded-lg overflow-hidden">
-      <Image
-        src={props.image.url}
-        alt={props.image.alt}
-        layout="fill"
-        objectFit="cover"
-        objectPosition="center"
-      />
+    <div className="w-full h-96">
+      <div className="relative w-full h-full mr-4 rounded-lg overflow-hidden">
+        <Image
+          src={props.image.url}
+          alt={props.image.alt}
+          fill
+          className="object-cover"
+        />
+      </div>
     </div>
   );
 };
@@ -35,14 +36,16 @@ interface HeaderProps {
 
 const Header: React.FC<HeaderProps> = (props) => {
   return (
-    <div className="mb-10 xl:flex">
-      <HeaderImage image={props.headerImage} />
-      <div className="w-full xl:w-1/2">
-        <h1 className="font-header text-8xl lg:text-10xl mb-8 break-words">
-          {props.children}
-        </h1>
-        <UserBadge username={MAIN_USERNAME} avatarUrl={MAIN_AVATAR_URL} />
+    <div className="mb-4">
+      <div className="mb-4 xl:flex">
+        <HeaderImage image={props.headerImage} />
+        <div className="w-full xl:w-1/2">
+          <h1 className="font-header text-8xl lg:text-10xl mb-4 break-words">
+            {props.children}
+          </h1>
+        </div>
       </div>
+        <UserBadge username={MAIN_USERNAME} avatarUrl={MAIN_AVATAR_URL} />
     </div>
   );
 };

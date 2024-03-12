@@ -17,18 +17,16 @@ type UserBadgeProps = {
 const UserBadge: React.FC<UserBadgeProps> = ({ username, avatarUrl }) => {
   return (
     <div className="flex items-center">
-      <div className="w-14 h-14 overflow-hidden rounded-full m-2 shadow-sm shadow-gray-400">
+      <div className="w-14 h-14 overflow-hidden rounded-full m-2 shadow-sm shadow-gray-400 relative">
         <Image
           src={avatarUrl}
           alt={username}
-          layout="responsive"
-          objectFit="contain"
           quality={50}
-          width={10}
-          height={10}
+          fill
+
         />
       </div>
-      <p className="font-normal text-sm lg:text-md">{username}</p>
+      <p className="font-normal text-gray-600 text-sm lg:text-md">{username}</p>
     </div>
   );
 };
