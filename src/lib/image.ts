@@ -3,6 +3,8 @@ export enum ImageName {
   Choque = "choque",
   Craneo = "craneo",
   Lagartija = "lagartija",
+  Craneo2 = "craneo-2",
+  Dragon = "dragon",
 }
 
 export interface ImageInfo {
@@ -31,6 +33,16 @@ const images: Record<ImageName, ImageInfo> = {
     name: ImageName.Lagartija,
     url: "/img/lagartija.jpeg",
     alt: "Lagartija",
+  },
+  [ImageName.Craneo2]: {
+    name: ImageName.Craneo2,
+    url: "/img/craneo-2.jpg",
+    alt: "Craneo 2",
+  },
+  [ImageName.Dragon]: {
+    name: ImageName.Dragon,
+    url: "/img/dragon.jpg",
+    alt: "Dragon",
   },
 };
 
