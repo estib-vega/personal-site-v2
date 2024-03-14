@@ -5,6 +5,7 @@ import { ImageName, getImageInfoByName } from "@/lib/image";
 interface BaseImgProps {
   className?: string;
   quality?: number;
+  contain?: boolean;
 }
 
 interface ImgPropsFromName extends BaseImgProps {
@@ -47,7 +48,7 @@ const Img: React.FC<ImgProps> = (props) => {
         alt={alt}
         quality={props.quality}
         fill
-        className="object-cover"
+        className={props.contain ? "object-contain" : "object-cover"}
       />
     </div>
   );
