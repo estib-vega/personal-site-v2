@@ -21,8 +21,10 @@ const BigThumbnail: React.FC<BigThumbnailProps> = ({ imageName }) => {
       className="relative cursor-pointer w-full h-[75dvh] rounded-lg mb-4 overflow-hidden border box-border border-red-100 hover:shadow-lg hover:shadow-red-400 hover:border-none transition-all duration-75"
     >
       <Link href={getGalleryImageLink(imageName)}>
-        <Img name={imageName} className="h-full w-full relative" />
-        <ThumbnailHeader imageInfo={imageInfo} />
+        <div className="w-full h-full">
+          <Img name={imageName} className="h-full w-full relative" />
+          <ThumbnailHeader imageInfo={imageInfo} />
+        </div>
       </Link>
     </div>
   );

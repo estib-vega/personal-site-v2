@@ -36,7 +36,7 @@ const Header: React.FC<HeaderProps> = (props) => {
       <div className="mb-4 xl:flex">
         <HeaderImage image={props.headerImage} />
         <div className="w-full xl:w-1/2">
-          <h1 className="font-header text-8xl lg:text-10xl mb-4 break-words">
+          <h1 className="font-header text-7xl lg:text-10xl mb-4 break-words">
             {props.children}
           </h1>
         </div>
