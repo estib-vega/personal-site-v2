@@ -25,9 +25,31 @@ const HeaderImage: React.FC<HeaderImageProps> = (props) => {
   );
 };
 
+interface TitleProps {
+  small?: boolean;
+  children: React.ReactNode;
+}
+
+const Title: React.FC<TitleProps> = (props) => {
+  if (props.small) {
+    return (
+      <h1 className="font-header text-3xl mb-2 break-words">
+        {props.children}
+      </h1>
+    );
+  }
+  return (
+    <h1 className="font-header text-7xl lg:text-10xl mb-4 break-words">
+      {props.children}
+    </h1>
+  );
+};
+
 interface HeaderProps {
   children: React.ReactNode;
+  small?: boolean;
   headerImage?: ImageName;
+  noUserBadge?: boolean;
 }
 
 const Header: React.FC<HeaderProps> = (props) => {
@@ -36,12 +58,12 @@ const Header: React.FC<HeaderProps> = (props) => {
       <div className="mb-4 xl:flex">
         <HeaderImage image={props.headerImage} />
         <div className="w-full xl:w-1/2">
-          <h1 className="font-header text-7xl lg:text-10xl mb-4 break-words">
-            {props.children}
-          </h1>
+          <Title small={props.small}>{props.children}</Title>
         </div>
       </div>
-      <UserBadge username={MAIN_USERNAME} avatarUrl={MAIN_AVATAR_URL} />
+      {props.noUserBadge ? null : (
+        <UserBadge username={MAIN_USERNAME} avatarUrl={MAIN_AVATAR_URL} />
+      )}
     </div>
   );
 };

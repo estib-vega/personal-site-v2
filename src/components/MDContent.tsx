@@ -1,9 +1,7 @@
 import { getMarkdownFile } from "@/lib/md";
 import React from "react";
-import Markdown from "react-markdown";
-import Blockquote from "./md/Blockquote";
-import Header from "./md/Header";
 import { ImageName } from "@/lib/image";
+import MD from "./md/MD";
 
 export enum MDContentTypes {
   String = "string",
@@ -49,19 +47,7 @@ function getContent(props: MDContentProps): string {
  * @returns {React.ReactElement} The rendered Markdown content.
  */
 const MDContent: React.FC<MDContentProps> = (props) => {
-  return (
-    <Markdown
-      components={{
-        h1: ({ children }) => <Header headerImage={props.headerImage}>{children}</Header>,
-        p: ({ children }) => (
-          <p className="font-normal text-md lg:text-lg mb-4">{children}</p>
-        ),
-        blockquote: ({ children }) => <Blockquote>{children}</Blockquote>,
-      }}
-    >
-      {getContent(props)}
-    </Markdown>
-  );
+  return <MD content={getContent(props)} headerImage={props.headerImage} />;
 };
 
 export default MDContent;
