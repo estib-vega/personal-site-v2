@@ -17,11 +17,11 @@ export interface RouteInfo {
 }
 
 export const routes: RouteInfo[] = [
-  { name: "Home", path: Route.Home },
-  { name: "About", path: Route.About, hide: true},
-  { name: "Projects", path: Route.Projects, hide: true},
-  { name: "Contact", path: Route.Contact, hide: true},
-  { name: "Gallery", path: Route.Gallery },
+  { name: "home", path: Route.Home },
+  { name: "about", path: Route.About},
+  { name: "projects", path: Route.Projects, hide: true},
+  { name: "contact", path: Route.Contact, hide: true},
+  { name: "gallery", path: Route.Gallery },
 ];
 
 /**

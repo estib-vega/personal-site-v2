@@ -28,7 +28,7 @@ const MD: React.FC<MDProps> = (props) => {
         <h2 className="font-bold text-1xl mb-2">{children}</h2>
       ),
       p: ({ children }) => (
-        <p className="font-normal text-md lg:text-lg mb-4">{children}</p>
+        <p className="font-normal text-sm lg:text-md mb-2">{children}</p>
       ),
       blockquote: ({ children }) => <Blockquote>{children}</Blockquote>,
     }}

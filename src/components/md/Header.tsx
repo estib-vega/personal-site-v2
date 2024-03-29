@@ -16,9 +16,9 @@ const HeaderImage: React.FC<HeaderImageProps> = (props) => {
   }
 
   return (
-    <div className="w-full h-96">
+    <div className="w-full h-96 rounded-sm overflow-hidden">
       <Img
-        className="relative w-full h-full mr-4 rounded-lg overflow-hidden"
+        className="relative w-full h-full mr-4 "
         name={props.image}
       />
     </div>
@@ -39,7 +39,7 @@ const Title: React.FC<TitleProps> = (props) => {
     );
   }
   return (
-    <h1 className="font-header text-7xl lg:text-10xl mb-4 break-words">
+    <h1 className="font-header text-7xl lg:text-10xl mb-4 break-words text-red-900">
       {props.children}
     </h1>
   );
@@ -55,7 +55,7 @@ interface HeaderProps {
 const Header: React.FC<HeaderProps> = (props) => {
   return (
     <div className="mb-4">
-      <div className="mb-4 xl:flex">
+      <div className="mb-4 xl:flex space-x-4 bg-red-200 rounded-lg overflow-hidden">
         <HeaderImage image={props.headerImage} />
         <div className="w-full xl:w-1/2">
           <Title small={props.small}>{props.children}</Title>

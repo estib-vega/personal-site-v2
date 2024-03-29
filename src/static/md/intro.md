@@ -1,4 +1,4 @@
-# portfolio
+# the what & the who
 
 Hey there! 👋 I'm Jose, a Frontend Engineer with an interest in crafting seamless and visually stunning web experiences.
 
