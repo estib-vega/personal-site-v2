@@ -18,7 +18,7 @@ const UserBadge: React.FC<UserBadgeProps> = ({ username, avatarUrl }) => {
   return (
     <div className="flex items-center">
       <Img
-        className="w-14 h-14 overflow-hidden rounded-full m-2 shadow-sm shadow-gray-400 relative"
+        className="w-14 h-14 overflow-hidden rounded-full m-2 shadow-sm shadow-gray-400 relative animate-fade-in"
         src={avatarUrl}
         alt={username}
         quality={20}

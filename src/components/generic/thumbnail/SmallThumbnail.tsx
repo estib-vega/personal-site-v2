@@ -20,7 +20,7 @@ const SmallThumbnail: React.FC<SmallThumbnailProps> = ({ imageName }) => {
   return (
     <div
       {...HoverSkew}
-      className="relative cursor-pointer w-full h-96 rounded-lg mb-4 lg:mr-4 lg:last:mr-0 overflow-hidden border box-border border-red-100 hover:shadow-lg hover:shadow-red-400 hover:border-none transition-all duration-75"
+      className="relative cursor-pointer w-full h-96 rounded-lg mb-4 lg:mr-4 lg:last:mr-0 overflow-hidden border box-border border-red-100 hover:shadow-lg hover:shadow-red-400 hover:border-none transition-all duration-75 animate-fade-in-3"
     >
       <Link href={getGalleryImageLink(imageName)}>
         <div className="w-full h-full">

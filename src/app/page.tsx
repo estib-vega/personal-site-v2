@@ -7,7 +7,7 @@ export default function Home() {
       <Hero
         imageName={ImageName.Cat}
         title="jose vega"
-        subtitle="software engineer"
+        subtitle="software engineer, etc."
       />
     </div>
   );

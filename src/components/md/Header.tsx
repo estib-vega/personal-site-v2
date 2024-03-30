@@ -17,10 +17,7 @@ const HeaderImage: React.FC<HeaderImageProps> = (props) => {
 
   return (
     <div className="w-full h-96 rounded-sm overflow-hidden">
-      <Img
-        className="relative w-full h-full mr-4 "
-        name={props.image}
-      />
+      <Img className="relative w-full h-full mr-4 " name={props.image} />
     </div>
   );
 };
@@ -55,9 +52,9 @@ interface HeaderProps {
 const Header: React.FC<HeaderProps> = (props) => {
   return (
     <div className="mb-4">
-      <div className="mb-4 xl:flex space-x-4 bg-red-200 rounded-lg overflow-hidden">
+      <div className="mb-4 xl:flex xl:items-center bg-red-200 rounded-lg overflow-hidden animate-fade-in-2">
         <HeaderImage image={props.headerImage} />
-        <div className="w-full xl:w-1/2">
+        <div className="w-full xl:w-1/2 p-2">
           <Title small={props.small}>{props.children}</Title>
         </div>
       </div>
