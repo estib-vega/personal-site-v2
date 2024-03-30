@@ -2,8 +2,8 @@ import { streamGenerator } from "./utils/promise";
 import { isNonEmptyObject } from "./utils/typing";
 
 const LLM_ENDPOINT = "http://localhost:11434/api/generate";
-const LLM_MODEL = "llama2:13b";
-const LLM_TEMP = 0.5;
+const LLM_MODEL = "llama2";
+const LLM_TEMP = 0;
 
 interface BaseLLMResponse {
   created_at: string;
@@ -82,13 +82,9 @@ interface LLMRequest {
 
 export default class LLMHandler {
   private static instance: LLMHandler;
-  private cache: Map<string, string>;
-  private context: number[] | undefined;
   private generationInProgress: boolean;
 
   private constructor() {
-    this.cache = new Map();
-    this.context = undefined;
     this.generationInProgress = false;
   }
 
@@ -96,6 +92,7 @@ export default class LLMHandler {
     if (!LLMHandler.instance) {
       LLMHandler.instance = new LLMHandler();
     }
+
     return LLMHandler.instance;
   }
 
@@ -142,10 +139,11 @@ export default class LLMHandler {
   async generateStream(
     prompt: string,
     callback: (value: string) => void,
-    onDone?: (value: string) => void
+    onDone?: (value: string, context: number[]) => void,
+    context?: number[]
   ): Promise<void> {
     if (this.generationInProgress) {
-      console.log("Generation in progress")
+      console.log("Generation in progress");
       return;
     }
 
@@ -159,7 +157,7 @@ export default class LLMHandler {
         model: LLM_MODEL,
         prompt,
         stream: true,
-        context: this.context,
+        context,
         options: {
           temperature: LLM_TEMP,
         },
@@ -178,10 +176,8 @@ export default class LLMHandler {
       callback(parsed.response);
 
       if (parsed.done) {
-        this.context = parsed.context;
         const completed = buffer.join("");
-        onDone?.(completed);
-        this.cache.set(prompt, completed);
+        onDone?.(completed, parsed.context);
         this.generationInProgress = false;
       }
     }

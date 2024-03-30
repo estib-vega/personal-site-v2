@@ -5,13 +5,15 @@ import MessageEntry from "./MessageEntry";
 
 interface MessageExchangeProps {
   message: Message;
+  context: number[] | undefined;
+  onDone: (value: string, context: number[]) => void;
 }
 
 const MessageExchange: React.FC<MessageExchangeProps> = (props) => {
   return (
     <>
       <MessageEntry message={props.message} />
-      <LLMResponse prompt={props.message.content} />
+      <LLMResponse prompt={props.message.content} context={props.context} onDone={props.onDone} />
     </>
   );
 };

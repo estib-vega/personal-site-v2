@@ -5,6 +5,12 @@ import MessageExchange from "./MessageExchange";
 
 const LLMConversation: React.FC = () => {
   const [conversation, setConversation] = React.useState<Conversation>([]);
+  const contextRef = React.useRef<number[] | undefined>(undefined);
+
+  const onDone = React.useCallback((value: string, context: number[]) => {
+    console.log(value)
+    contextRef.current = context;
+  }, []);
 
   const addUserMessage = (content: string) => {
     setConversation((prev) => [
@@ -18,7 +24,12 @@ const LLMConversation: React.FC = () => {
       <div className="h-full overflow-scroll p-4">
         <div className="space-y-2">
           {conversation.map((message) => (
-            <MessageExchange key={message.uuid} message={message} />
+            <MessageExchange
+              key={message.uuid}
+              message={message}
+              context={contextRef.current}
+              onDone={onDone}
+            />
           ))}
         </div>
       </div>
