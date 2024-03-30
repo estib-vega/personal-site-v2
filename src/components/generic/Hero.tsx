@@ -12,8 +12,8 @@ type HeroProps = {
 const Hero: React.FC<HeroProps> = ({ title, subtitle, imageName }) => {
   const imageInfo = getImageInfoByName(imageName);
   return (
-    <div className="w-full h-[75dvh] border relative rounded-lg overflow-hidden">
-      <Img name={imageName} className="h-full w-full relative" />
+    <div className="w-full h-[75dvh] relative rounded-lg overflow-hidden">
+      <Img name={imageName} className="h-full w-full relative animate-fade-in-2" />
       <ThumbnailHeader
         title={title}
         subtitle={subtitle}

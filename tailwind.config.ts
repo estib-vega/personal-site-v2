@@ -23,10 +23,16 @@ const config: Config = {
       },
       animation: {
         "fade-in": "fade-in 300ms ease-in-out",
+        "fade-in-2": "delayed-fade-in 800ms ease-in-out",
       },
       keyframes: {
         "fade-in": {
           "0%": { opacity: "0" },
+          "100%": { opacity: "1" },
+        },
+        "delayed-fade-in": {
+          "0%": { opacity: "0" },
+          "45%": { opacity: "0" },
           "100%": { opacity: "1" },
         },
       },
