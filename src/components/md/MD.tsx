@@ -31,6 +31,8 @@ const MD: React.FC<MDProps> = (props) => {
         <p className="font-normal text-sm lg:text-md mb-2">{children}</p>
       ),
       blockquote: ({ children }) => <Blockquote>{children}</Blockquote>,
+      ol: ({ children }) => <ol className="list-decimal ml-4">{children}</ol>,
+      li: ({ children }) => <li className="font-normal text-sm lg:text-md mb-2">{children}</li>,
     }}
   >
     {props.content}
