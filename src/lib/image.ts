@@ -5,6 +5,7 @@ export enum ImageName {
   Lagartija = "lagartija",
   Craneo2 = "craneo-2",
   Dragon = "dragon",
+  ChessGif = "chess-gif",
 }
 
 export interface ImageInfo {
@@ -14,6 +15,7 @@ export interface ImageInfo {
   useDarkFont?: boolean;
   displayName?: string;
   blurDataUrl?: string;
+  contain?: boolean;
 }
 
 const images: Record<ImageName, ImageInfo> = {
@@ -64,6 +66,12 @@ const images: Record<ImageName, ImageInfo> = {
     blurDataUrl:
       "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAAECAIAAADETxJQAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAMUlEQVR4nGPYM3tWaHCBu5UHQ0d6kQGD4MSULIb08Kwppk6zvAMZ8iomTapq+P/hNQAhrRAbG5wYvAAAAABJRU5ErkJggg==",
   },
+  [ImageName.ChessGif]: {
+    name: ImageName.ChessGif,
+    url: "/img/chess.gif",
+    alt: "Dumb Chess gif",
+    contain: true,
+  }
 };
 
 /**

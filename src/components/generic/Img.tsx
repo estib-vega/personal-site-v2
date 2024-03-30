@@ -23,7 +23,14 @@ function isImgPropsFromName(props: ImgProps): props is ImgPropsFromName {
   return (props as ImgPropsFromName).name !== undefined;
 }
 
-function extractImgInfo(props: ImgProps): { url: string; alt: string, blurDataUrl?: string } {
+interface ImgDisplayInfo {
+  url: string;
+  alt: string;
+  blurDataUrl?: string;
+  contain?: boolean;
+}
+
+function extractImgDisplayInfo(props: ImgProps): ImgDisplayInfo {
   if (isImgPropsFromName(props)) {
     return getImageInfoByName(props.name);
   }
@@ -39,7 +46,7 @@ function extractImgInfo(props: ImgProps): { url: string; alt: string, blurDataUr
  * @returns {JSX.Element} The rendered Img component.
  */
 const Img: React.FC<ImgProps> = (props) => {
-  const { url, alt, blurDataUrl } = extractImgInfo(props);
+  const { url, alt, blurDataUrl, contain } = extractImgDisplayInfo(props);
 
   return (
     <div className={props.className}>
@@ -50,7 +57,7 @@ const Img: React.FC<ImgProps> = (props) => {
         fill
         placeholder={blurDataUrl ? "blur" : "empty"}
         blurDataURL={blurDataUrl}
-        className={props.contain ? "object-contain" : "object-cover"}
+        className={props.contain || contain ? "object-contain" : "object-cover"}
       />
     </div>
   );

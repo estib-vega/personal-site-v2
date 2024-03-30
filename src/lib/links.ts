@@ -5,6 +5,7 @@ const SEPARATOR = "/";
 export enum Route {
   Home = "/",
   About = "/about",
+  Chess = "/chess",
   Projects = "/projects",
   Contact = "/contact",
   Gallery = "/gallery",
@@ -19,6 +20,7 @@ export interface RouteInfo {
 export const routes: RouteInfo[] = [
   { name: "home", path: Route.Home },
   { name: "about", path: Route.About},
+  { name: "chess", path: Route.Chess},
   { name: "projects", path: Route.Projects, hide: true},
   { name: "contact", path: Route.Contact, hide: true},
   { name: "gallery", path: Route.Gallery },

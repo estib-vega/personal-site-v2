@@ -2,6 +2,7 @@ import { ImageName } from "./image";
 
 export enum ArticleName {
   Portfolio = "portfolio",
+  ChessProject = "chess-project",
 }
 
 export interface ArticleInfo {
@@ -15,6 +16,11 @@ const articles: Record<ArticleName, ArticleInfo> = {
     name: ArticleName.Portfolio,
     image: ImageName.Cat,
     fileName: "intro.md",
+  },
+  [ArticleName.ChessProject]: {
+    name: ArticleName.ChessProject,
+    image: ImageName.ChessGif,
+    fileName: "chess-project.md",
   },
 };
 
