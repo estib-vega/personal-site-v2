@@ -6,6 +6,7 @@ export enum ImageName {
   Craneo2 = "craneo-2",
   Dragon = "dragon",
   ChessGif = "chess-gif",
+  RagGif = "rag-gif",
 }
 
 export interface ImageInfo {
@@ -71,7 +72,13 @@ const images: Record<ImageName, ImageInfo> = {
     url: "/img/chess.gif",
     alt: "Dumb Chess gif",
     contain: true,
-  }
+  },
+  [ImageName.RagGif]: {
+    name: ImageName.RagGif,
+    url: "/img/rag.gif",
+    alt: "Rag gif",
+    contain: true,
+  },
 };
 
 /**
