@@ -3,8 +3,11 @@ import UserBadge from "../generic/UserBadge";
 import { ImageName } from "@/lib/image";
 import Img from "../generic/Img";
 
+// Hello
+
 const MAIN_USERNAME = "estib";
 const MAIN_AVATAR_URL = "/img/estib-profile.jpeg";
+const SECONDARY_AVATAR_URL = "/img/estib-profile.jpeg";
 
 interface HeaderImageProps {
   image: ImageName | undefined;
@@ -16,7 +19,7 @@ const HeaderImage: React.FC<HeaderImageProps> = (props) => {
   }
 
   return (
-    <div className="w-full h-96 rounded-sm overflow-hidden">
+    <div className="w-full h-96 rounded-sm">
       <Img className="relative w-full h-full mr-4 " name={props.image} />
     </div>
   );
