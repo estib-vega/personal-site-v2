@@ -3,6 +3,8 @@ import Img from "./Img";
 import { ImageName, getImageInfoByName } from "@/lib/image";
 import ThumbnailHeader from "./thumbnail/ThumbnailHeader";
 
+// :) v2
+
 type HeroProps = {
   title: string;
   subtitle: string;
