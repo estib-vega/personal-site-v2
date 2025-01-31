@@ -25,6 +25,7 @@ const Hero: React.FC<HeroProps> = ({ title, subtitle, imageName }) => {
       />
     </div>
   );
-};
+
+  // blaaaaa :) this is version 9
 
 export default Hero;
