@@ -3,6 +3,8 @@ import Img from "./Img";
 import { ImageName, getImageInfoByName } from "@/lib/image";
 import ThumbnailHeader from "./thumbnail/ThumbnailHeader";
 
+// :) v2
+
 type HeroProps = {
   title: string;
   subtitle: string;
@@ -12,7 +14,7 @@ type HeroProps = {
 const Hero: React.FC<HeroProps> = ({ title, subtitle, imageName }) => {
   const imageInfo = getImageInfoByName(imageName);
   return (
-    <div className="w-full h-[75dvh] relative rounded-lg overflow-hidden">
+    <div className="w-full relative rounded-lg overflow-hidden bg-gray-100 dark:bg-gray-800 shadow-lg animate-fade-in mb-8">
       <Img name={imageName} className="h-full w-full relative animate-fade-in-2" />
       <ThumbnailHeader
         title={title}
@@ -23,6 +25,7 @@ const Hero: React.FC<HeroProps> = ({ title, subtitle, imageName }) => {
       />
     </div>
   );
-};
+
+  // blaaaaa :) this is version 9
 
 export default Hero;

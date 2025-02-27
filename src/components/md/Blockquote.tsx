@@ -6,7 +6,7 @@ interface BlockquoteProps {
 
 const Blockquote: React.FC<BlockquoteProps> = (props) => {
   return (
-    <blockquote className="font-normal text-md lg:text-lg italic mb-4">
+    <blockquote className="text-md lg:text-lg italic mb-4">
       {props.children}
     </blockquote>
   );
