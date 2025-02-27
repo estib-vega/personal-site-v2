@@ -1,5 +1,5 @@
 import Article from "@/components/Article";
-import { ArticleName } from "@/lib/article";
+import { ArticleName } from "@/lib/article-v2";
 
 export default function About() {
   return (

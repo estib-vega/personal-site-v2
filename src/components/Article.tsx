@@ -1,4 +1,4 @@
-import { ArticleName, getArticleInfoByName } from "@/lib/article";
+import { ArticleName, getArticleInfoByName } from "@/lib/article-v2";
 import React from "react";
 import MDContent, { MDContentTypes } from "./MDContent";
 
